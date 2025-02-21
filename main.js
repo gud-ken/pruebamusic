@@ -31,28 +31,19 @@ function gotResults(error, results){
 
         if(results[0].label=="tulum"){
             img1.src='tulum.jpg';
-            img2.src= 'ibiza.jpg';
-            img3.src= 'berlin.jpeg';
-            img4.src= 'cairo.jpg';
-            img5.src= 'paris.jpg';
+            Audio("Tulum.mp3");
         }else if(results[0].label=="ibiza"){
-            img1.src='tulum.jpg';
+           
             img2.src= 'ibiza.jpg';
-            img3.src= 'berlin.jpeg';
-            img4.src= 'cairo.jpg';
-            img5.src= 'paris.jpg';
+            Audio("ibiza.mp3");
         }else if(results[0].label=="berlin"){
-            img1.src='tulum.jpg';
-            img2.src= 'ibiza.jpg';
+            
             img3.src= 'berlin.jpg';
-            img4.src= 'cairo.jpeg';
-            img5.src= 'paris.jpg';
+            Audio("Berlin.mp3");
         }else if(results[0].label=="cairo"){
-            img1.src='tulum.jpg';
-            img2.src= 'ibiza.jpg';
-            img3.src= 'berlin.jpeg';
+
             img4.src= 'cairo.jpg';
-            img5.src= 'paris.jpg';
+            Audio("Cairo.mp3");
         }else if(results[0].label=="paris"){
             img1.src='tulum.jpg';
             img2.src= 'ibiza.jpg';
@@ -60,7 +51,7 @@ function gotResults(error, results){
             img4.src= 'cairo.jpg';
             img5.src= 'paris.jpg';
         }else{
-            img.src='tulum.jpg';
+            img1.src='tulum.jpg';
             img2.src= 'ibiza.jpg';
             img3.src= 'berlin.jpeg';
             img4.src= 'cairo.jpg';
@@ -78,11 +69,10 @@ function gotResults(error, results){
 
        // Reproducir el audio asociado a la imagen reconocida
        let audioFiles = {
-           "tulum": "tulum.mp3",
-           "ibiza": "ibiza.mp3",
-           "berlin": "berlin.mp3",
-           "cairo": "cairo.mp3",
-           "paris": "paris.mp3"
+           "tulum": "Tulum.mp3",
+           "ibiza": "Ibiza.mp3",
+           "berlin": "Berlin.mp3",
+           "cairo": "CParis.mp3"
        };
        if (audioFiles[recognizedLabel]) {
            let audio = new Audio(audioFiles[recognizedLabel]);

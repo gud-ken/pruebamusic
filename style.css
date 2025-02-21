@@ -29,7 +29,7 @@ background: linear-gradient(to right, #cbad6d, #d53369); /* W3C, IE 10+/ Edge, F
     letter-spacing: 3px;
 }
 
-.images{
+.images {
     display: flex;
     margin: 0 5%;
     padding: 0 2%;
@@ -43,14 +43,20 @@ background: linear-gradient(to right, #cbad6d, #d53369); /* W3C, IE 10+/ Edge, F
     align-items: center;
 }
 
-.images img{
+.images img {
     width: 250px;
-	height: 400px;
-	object-fit: cover;
-	border: 3px solid #ffffff;
+    height: 400px;
+    object-fit: cover;
+    border: 3px solid #ffffff;
     border-radius: 5px;
     margin: 15px;
-  }
+    transition: transform 0.3s ease; /*  Transición suave */
+}
+
+.images img.zoomed {
+    transform: scale(1.2); /*  Escala para el zoom */
+}
+
 
 .copy_rigth_footer{
     position: fixed;
@@ -63,24 +69,21 @@ background: linear-gradient(to right, #cbad6d, #d53369); /* W3C, IE 10+/ Edge, F
     text-align: center;
     text-shadow: 5px 5px 5px rgba(84, 89, 97, 0.801);
 }
-
-
 .zoom-animation {
-    animation: zoomEffect 0.5s ease-in-out;
-}
-
-@keyframes zoomEffect {
+    animation: zoomEffect 0.5s ease-in-out; /* Ajusta la duración y el tipo de animación según lo necesites */
+  }
+  
+  @keyframes zoomEffect {
     0% {
-        transform: scale(1);
-        opacity: 1;
+      transform: scale(1); /* Escala original */
+      opacity: 1;
     }
     50% {
-        transform: scale(1.2);
-        opacity: 0.5;
+      transform: scale(1.2); /* Escala durante el "zoom" */
+      opacity: 0.5; /* Reduce la opacidad durante el zoom */
     }
     100% {
-        transform: scale(1);
-        opacity: 1;
+      transform: scale(1); /* Regresa a la escala original */
+      opacity: 1;
     }
-}
-
+  }
