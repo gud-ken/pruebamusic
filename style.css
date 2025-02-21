@@ -64,19 +64,23 @@ background: linear-gradient(to right, #cbad6d, #d53369); /* W3C, IE 10+/ Edge, F
     text-shadow: 5px 5px 5px rgba(84, 89, 97, 0.801);
 }
 
+
 .zoom-animation {
     animation: zoomEffect 0.5s ease-in-out;
-  }
-  
-  @keyframes zoomEffect {
+}
+
+@keyframes zoomEffect {
     0% {
-      transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
     }
     50% {
-      transform: scale(1.2);
+        transform: scale(1.2);
+        opacity: 0.5;
     }
     100% {
-      transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
     }
-  }
+}
 

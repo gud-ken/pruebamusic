@@ -32,60 +32,56 @@ function gotResults(error, results){
         if(results[0].label=="tulum"){
             img1.src='tulum.jpg';
             img2.src= 'ibiza.jpg';
-            img3.src= 'berlin.jpg';
+            img3.src= 'berlin.jpeg';
             img4.src= 'cairo.jpg';
             img5.src= 'paris.jpg';
         }else if(results[0].label=="ibiza"){
             img1.src='tulum.jpg';
             img2.src= 'ibiza.jpg';
-            img3.src= 'berlin.jpg';
+            img3.src= 'berlin.jpeg';
             img4.src= 'cairo.jpg';
             img5.src= 'paris.jpg';
         }else if(results[0].label=="berlin"){
             img1.src='tulum.jpg';
             img2.src= 'ibiza.jpg';
             img3.src= 'berlin.jpg';
-            img4.src= 'cairo.jpg';
+            img4.src= 'cairo.jpeg';
             img5.src= 'paris.jpg';
         }else if(results[0].label=="cairo"){
             img1.src='tulum.jpg';
             img2.src= 'ibiza.jpg';
-            img3.src= 'berlin.jpg';
+            img3.src= 'berlin.jpeg';
             img4.src= 'cairo.jpg';
             img5.src= 'paris.jpg';
         }else if(results[0].label=="paris"){
             img1.src='tulum.jpg';
             img2.src= 'ibiza.jpg';
-            img3.src= 'berlin.jpg';
+            img3.src= 'berlin.jpeg';
             img4.src= 'cairo.jpg';
             img5.src= 'paris.jpg';
         }else{
             img.src='tulum.jpg';
             img2.src= 'ibiza.jpg';
-            img3.src= 'berlin.jpg';
+            img3.src= 'berlin.jpeg';
             img4.src= 'cairo.jpg';
             img5.src= 'paris.jpg';
         }
         
-        var targetImage = document.getElementById(recognizedLabel);
-        if(targetImage) {
-            targetImage.classList.remove("zoom-animation");
-            void targetImage.offsetWidth;
-            targetImage.classList.add("zoom-animation");
-        }
-        var audioFiles = {
-            tulum: "tulum.mp3",
-            ibiza: "ibiza.mp3",
-            berlin: "berlin.mp3",
-            cairo: "cairo.mp3",
-            paris: "paris.mp3"
-          };
-          if (audioFiles[recognizedLabel]) {
-            var audio = new Audio(audioFiles[recognizedLabel]);
-            audio.play();
-          }
+       // Aplicar efecto de zoom a la imagen reconocida 
+       var targetImage = document.getElementById(recognizedLabel); if (targetImage) { 
+        // Reiniciar animación eliminando y reañadiendo la clase 
+        targetImage.classList.remove("zoom-animation"); void targetImage.offsetWidth; 
+        // Fuerza el reflow para reiniciar la animación 
+        targetImage.classList.add("zoom-animation"); }
 
+        // Reproducir el audio correspondiente a la imagen reconocida 
+        var audioFiles = { tulum: "tulum.mp3", ibiza: "ibiza.mp3", berlin: "berlin.mp3", cairo: "cairo.mp3", paris: "paris.mp3" };
+        if (audioFiles[recognizedLabel]) { var audio = new Audio(audioFiles[recognizedLabel]); audio.play(); 
+        } 
     }
+        
+
+    
     
 
 }
